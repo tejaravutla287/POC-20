@@ -3,7 +3,7 @@ name: CI Pipeline
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build-and-push:
@@ -15,12 +15,12 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.bhanutejaravutla }}
-          password: ${{ secrets.dckr_pat_kb3h-RfSlTc1OwDm2f-6jDxUaGk }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags: ${{ secrets.bhanutejaravutla }}/go-app:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/py-app:latest
