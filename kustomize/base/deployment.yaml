@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - name: go-app
-        image: YOUR_DOCKER_USERNAME/go-app:latest
+        # CHANGE 'YOUR_DOCKER_USERNAME' TO YOUR ACTUAL DOCKER HUB USERNAME
+        image: bhanutejaravutla/py-app:latest
         ports:
         - containerPort: 8080
